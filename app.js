@@ -11,6 +11,7 @@ const cartContent = document.querySelector('.cart-content');
 const productsDOM = document.querySelector('.products-center');
 
 
+
 //cart
 let cart = []
 //buttons
@@ -52,7 +53,7 @@ products.forEach(product => {
                     />
                     <button class="bag-btn" data-id=${product.id}>
                         <i class="fas fa-shopping-cart"></i>
-                        add to bag
+                        dodaj narudzbu
                     </button>
                 </div>
                 <h3>${product.title}</h3>
@@ -71,11 +72,11 @@ getBagButtons(){
     let id = button.dataset.id;
     let inCart = cart.find(item => item.id === id);
     if(inCart){
-      button.innerText = "In Cart";
+      button.innerText = "narudzba dodana";
       button.disabled = true;
     } 
       button.addEventListener("click", event =>{
-        event.target.innerText = "In Cart";
+        event.target.innerText = "narudzba dodana";
         event.target.disabled = true;
         // get product from products
         let cartItem = {...storage.getProduct(id), amount:1};
@@ -111,8 +112,8 @@ div.classList.add("cart-item");
 div.innerHTML = `<img src=${item.image} alt="product">
                     <div>
                         <h4>${item.title}</h4>
-                        <h5>${item.price}</h5>
-                        <span class="remove-item" data-id=${item.id}>remove</span>
+                        <h5>${item.price}KM</h5>
+                        <span class="remove-item" data-id=${item.id}>ukloni</span>
                     </div>
                     <div>
                         <i class="fas fa-chevron-up" data-id=${item.id}></i>
