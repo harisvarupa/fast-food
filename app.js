@@ -2,6 +2,15 @@
 
 const cartBtn = document.querySelector('.cart-btn');
 const closeCartBtn = document.querySelector('.close-cart');
+const orderBtn = document.querySelector('.order-cart');
+
+const name = document.getElementById('name');
+const adress = document.getElementById('adress');
+const phoneNumber = document.getElementById('phoneNumber');
+const form = document.getElementById('form');
+const error = document.getElementById('error');
+
+
 const clearCartBtn = document.querySelector('.clear-cart');
 const cartDOM = document.querySelector('.cart');
 const cartOverlay = document.querySelector('.cart-overlay');
@@ -10,6 +19,14 @@ const cartTotal = document.querySelector('.cart-total');
 const cartContent = document.querySelector('.cart-content');
 const productsDOM = document.querySelector('.products-center');
 
+//form
+
+form.addEventListener('submit', (e) => {
+  let input = [];
+  if (input.length > 0) {
+    e.preventDefault()
+  }
+});
 
 
 //cart
@@ -92,6 +109,7 @@ getBagButtons(){
         this.addCartItem(cartItem);
         // show the cart
         this.showCart();
+      
       });
   });
 
@@ -128,6 +146,7 @@ showCart(){
         cartDOM.classList.add("showCart");
 
 }
+
 setupAPP(){
 cart = storage.getCart();
 this.setCartValues(cart);
@@ -145,6 +164,11 @@ hideCart(){
         cartDOM.classList.remove("showCart");
 }
 cartLogic(){
+  // order button
+  orderBtn.addEventListener("click", ()=>{
+    this.orderCart();
+  });
+
   // clear cart button
   clearCartBtn.addEventListener("click", ()=>{
     this.clearCart();
@@ -187,6 +211,10 @@ cartLogic(){
     }
   });
 }
+orderCart(){
+
+}
+
 clearCart(){
   let cartItems = cart.map(item => item.id);
   cartItems.forEach(id => this.removeItem(id));
@@ -203,7 +231,7 @@ removeItem(id){
   storage.saveCart(cart);
   let button = this.getSingleButton(id);
   button.disabled = false;
-  button.innerHTML = `<i class="fas fa-shopping-cart"></i>add to bag`;
+  button.innerHTML = `<i class="fas fa-shopping-cart"></i>dodaj narudzbu`;
 }
 getSingleButton(id){
   return buttonsDOM.find(button => button.dataset.id === id);
@@ -212,6 +240,7 @@ getSingleButton(id){
 
 //local storage     
 class storage {
+
 static saveProducts(products){
   localStorage.setItem("products", JSON.stringify(products));
 }

@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 
+html {
+  scroll-behavior: smooth;
+}
 :root {
   --primaryColor: #f09d51;
   --mainWhite: #fff;
@@ -262,3 +265,51 @@ img.logo {
 }
 
 /* --------------- End of Cart ---------------- */
+
+/* --------------- Form ---------------- */
+.submit {
+  padding: 1rem 2.6rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: lime;
+  color: var(--mainBlack);
+  border: 1px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+.submit:hover {
+  background: transparent;
+  color: var(--primaryColor);
+}
+
+.clear-btn {
+  padding: 1rem 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: var(--primaryColor);
+  color: var(--mainBlack);
+  border: 1px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+.clear-btn:hover {
+  background: transparent;
+  color: var(--primaryColor);
+}
+
+#name {
+  padding: 0.1rem 1.5rem;
+}
+#adress {
+  padding: 0.1rem 1.5rem;
+}
+#phoneNumber {
+  padding: 0.1rem 1.5rem;
+}
+label {
+  width: 70px;
+  display: inline-block;
+}
+/* --------------- End of Form ---------------- */

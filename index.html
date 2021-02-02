@@ -32,13 +32,14 @@
     <header class="hero">
     <div class="banner">
     <h1 class="banner-title">FAST FOOD</h1>
-    <button class="banner-btn">NARUČI ODMAH</button>
+    
+    <a  href="#scroll" class="banner-btn">NARUČI ODMAH</a>
     </div>
     </header>
     <!--end of hiro-->
     <!--products-->
     <section class="products">
-        <div class="section-title">
+        <div id="scroll" class="section-title">
             <h2>MENI</h2>
         </div>
         <div class="products-center">
@@ -58,7 +59,48 @@
             </div>
             <div class="cart-footer">
                 <h3>ukupno za platiti : KM <span class="cart-total">0</span></h3>
-                <button class="clear-cart banner-btn">Isprazni</button>
+                
+            
+            <!--data form-->
+            <div id='error'></div>
+            
+            <form hidden action="mailto:varupaharis99@gmail.com" method="post" enctype="text/plain" id="form" action="/" method="GET">
+                <div class="container">
+                <div>
+                    <label for="name">Ime</label>
+                    <input id="name" name="name" type="text" required>
+                </div></br>
+            
+                <div>
+                    <label for="name">Adresa</label>
+                    <input id="adress" name="adress" type="text" required>
+                </div></br>
+                <div>
+                    <label for="phoneNumber">Telefon</label>
+                    <input id="phoneNumber" name="phoneNumber" type="number" required>
+                </div>
+                
+                </div>
+               
+            </br>
+               <button class="submit" type="submit">Potvrdi</button>
+            </form>
+            <!--end of data form-->
+            </br>
+            <button onclick="ShowAndHide()" class="order-cart banner-btn">Naruči</button>
+        </br>
+    </br>
+    <SCRIPT>
+        function ShowAndHide() {
+            var x = document.getElementById('form');
+            if (x.style.display == 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    </SCRIPT>
+                <button class="clear-cart clear-btn">Isprazni</button>
             </div>
         </div>
     </div>
