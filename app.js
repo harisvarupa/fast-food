@@ -202,7 +202,7 @@ cartLogic(){
       if(tempItem.amount>0){
       storage.saveCart(cart);
       this.setCartValues(cart);
-      lowerAmount.previousElementSiblinh.innerText = tempItem.amount;
+      lowerAmount.previousElementSibling.innerText = tempItem.amount;
       }
       else{
         cartContent.removeChild(lowerAmount.parentElement.parentElement);

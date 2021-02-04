@@ -308,6 +308,9 @@ img.logo {
 #phoneNumber {
   padding: 0.1rem 1.5rem;
 }
+#payment {
+  padding: 0.1rem;
+}
 label {
   width: 70px;
   display: inline-block;
